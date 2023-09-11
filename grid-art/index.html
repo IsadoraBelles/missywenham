@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Placement</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(24, 23, 29);
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        border: 1px solid white;
+        height: 678px;
+        width: 510px;
+        background-color: rgb(58, 58, 58);
+        display: grid;
+        padding: 10px;
+        gap: 7px;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows:
+          1fr 0.25fr 1.25fr repeat(2, 0.75fr) repeat(4, 1fr) repeat(2, 0.75fr)
+          1fr 0.25fr 1fr;
+        grid-template-areas:
+          "wht1 ylw1 ylw1 ylw1 wht2 wht2 wht2 wht3 wht3 wht4"
+          "wht1 wht5 wht5 blk1 blk1 red1 red1 red1 red1 wht4"
+          "wht1 wht5 wht5 blk1 blk1 red1 red1 red1 red1 wht6"
+          "ylw2 ylw2 blk2 wht7 wht8 red1 red1 red1 red1 wht6"
+          "wht9 wht9 blk2 wht7 wht8 red1 red1 red1 red1 wht6"
+          "red2 red2 blu1 blu1 wt10 wt11 wt11 ylw3 ylw3 ylw4"
+          "red2 red2 blu1 blu1 wt10 wt12 wt12 ylw3 ylw3 ylw4"
+          "ylw5 ylw6 ylw6 wt13 wt13 wt14 red3 red3 blu2 blu2"
+          "ylw5 ylw6 ylw6 wt15 wt15 wt14 red3 red3 blu2 blu2"
+          "wt16 blu3 blu3 blu3 blu3 wt17 wt18 blk3 ylw7 ylw8"
+          "wt16 blu3 blu3 blu3 blu3 wt17 wt18 blk3 ylw7 blk4"
+          "wt16 blu3 blu3 blu3 blu3 blk5 blk5 wt19 wt19 wt20"
+          "wt21 blu3 blu3 blu3 blu3 blk5 blk5 wt19 wt19 wt20"
+          "wt21 wt22 wt22 wt23 wt23 wt23 ylw9 ylw9 ylw9 wt20";
+      }
+
+      .yellow {
+        background-color: rgb(251, 239, 0);
+      }
+      .blue {
+        background-color: rgb(31, 133, 201);
+      }
+      .red {
+        background-color: rgb(245, 0, 0);
+      }
+      .black {
+        background-color: black;
+      }
+      .white {
+        background-color: white;
+      }
+      #y1 {
+        grid-area: ylw1;
+      }
+      #y2 {
+        grid-area: ylw2;
+      }
+      #y3 {
+        grid-area: ylw3;
+      }
+      #y4 {
+        grid-area: ylw4;
+      }
+      #y5 {
+        grid-area: ylw5;
+      }
+      #y6 {
+        grid-area: ylw6;
+      }
+      #y7 {
+        grid-area: ylw7;
+      }
+      #y8 {
+        grid-area: ylw8;
+      }
+      #y9 {
+        grid-area: ylw9;
+      }
+
+      #b1 {
+        grid-area: blk1;
+      }
+      #b2 {
+        grid-area: blk2;
+      }
+      #b3 {
+        grid-area: blk3;
+      }
+      #b4 {
+        grid-area: blk4;
+      }
+      #b5 {
+        grid-area: blk5;
+      }
+
+      #u1 {
+        grid-area: blu1;
+      }
+      #u2 {
+        grid-area: blu2;
+      }
+      #u3 {
+        grid-area: blu3;
+      }
+
+      #r1 {
+        grid-area: red1;
+      }
+      #r2 {
+        grid-area: red2;
+      }
+      #r3 {
+        grid-area: red3;
+      }
+
+      #w1 {
+        grid-area: wht1;
+      }
+      #w2 {
+        grid-area: wht2;
+      }
+      #w3 {
+        grid-area: wht3;
+      }
+      #w4 {
+        grid-area: wht4;
+      }
+      #w5 {
+        grid-area: wht5;
+      }
+      #w6 {
+        grid-area: wht6;
+      }
+      #w7 {
+        grid-area: wht7;
+      }
+      #w8 {
+        grid-area: wht8;
+      }
+      #w9 {
+        grid-area: wht9;
+      }
+
+      #w10 {
+        grid-area: wt10;
+      }
+      #w11 {
+        grid-area: wt11;
+      }
+      #w12 {
+        grid-area: wt12;
+      }
+      #w13 {
+        grid-area: wt13;
+      }
+      #w14 {
+        grid-area: wt14;
+      }
+      #w15 {
+        grid-area: wt15;
+      }
+      #w16 {
+        grid-area: wt16;
+      }
+      #w17 {
+        grid-area: wt17;
+      }
+      #w18 {
+        grid-area: wt18;
+      }
+
+      #w19 {
+        grid-area: wt19;
+      }
+      #w20 {
+        grid-area: wt20;
+      }
+      #w21 {
+        grid-area: wt21;
+      }
+      #w22 {
+        grid-area: wt22;
+      }
+      #w23 {
+        grid-area: wt23;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="yellow" id="y1"></div>
+        <div class="yellow" id="y2"></div>
+        <div class="yellow" id="y3"></div>
+        <div class="yellow" id="y4"></div>
+        <div class="yellow" id="y5"></div>
+        <div class="yellow" id="y6"></div>
+        <div class="yellow" id="y7"></div>
+        <div class="yellow" id="y8"></div>
+        <div class="yellow" id="y9"></div>
+
+        <div class="black" id="b1"></div>
+        <div class="black" id="b2"></div>
+        <div class="black" id="b3"></div>
+        <div class="black" id="b4"></div>
+        <div class="black" id="b5"></div>
+
+        <div class="blue" id="u1"></div>
+        <div class="blue" id="u2"></div>
+        <div class="blue" id="u3"></div>
+
+        <div class="red" id="r1"></div>
+        <div class="red" id="r2"></div>
+        <div class="red" id="r3"></div>
+
+        <div class="white" id="w1"></div>
+        <div class="white" id="w2"></div>
+        <div class="white" id="w3"></div>
+        <div class="white" id="w4"></div>
+        <div class="white" id="w5"></div>
+        <div class="white" id="w6"></div>
+        <div class="white" id="w7"></div>
+        <div class="white" id="w8"></div>
+        <div class="white" id="w9"></div>
+        <div class="white" id="w10"></div>
+        <div class="white" id="w11"></div>
+        <div class="white" id="w12"></div>
+        <div class="white" id="w13"></div>
+        <div class="white" id="w14"></div>
+        <div class="white" id="w15"></div>
+        <div class="white" id="w16"></div>
+        <div class="white" id="w17"></div>
+        <div class="white" id="w18"></div>
+        <div class="white" id="w19"></div>
+        <div class="white" id="w20"></div>
+        <div class="white" id="w21"></div>
+        <div class="white" id="w22"></div>
+        <div class="white" id="w23"></div>
+      </div>
+    </div>
+  </body>
+</html>
